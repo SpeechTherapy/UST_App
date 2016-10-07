@@ -12,11 +12,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ust.entity.Media;
 import com.ust.entity.Patient;
+import com.ust.entity.Sentences;
 import com.ust.entity.Therapist;
 import com.ust.entity.User;
 import com.ust.entity.Words;
 import com.ust.service.api.MediaServiceApi;
 import com.ust.service.api.PatientserviceApi;
+import com.ust.service.api.SentencesServiceApi;
 import com.ust.service.api.UserServiceApi;
 import com.ust.service.api.WordsServiceApi;
 
@@ -28,6 +30,7 @@ public class ActivityPatientController
 	@Autowired WordsServiceApi wordsServiceApi;
 	@Autowired MediaServiceApi mediaServiceApi;
 	@Autowired PatientserviceApi patientServiceApi;
+	@Autowired SentencesServiceApi sentencesServiceApi;
 	@RequestMapping(value = "ActivityScreenPatient")
 
     	 public ModelAndView ActivityScreen(HttpServletRequest request, Model model, RedirectAttributes redirectAttributes,@ModelAttribute User user)
@@ -68,10 +71,15 @@ public class ActivityPatientController
 		model.addAttribute("mediaImage", word.getMedia().getMediaImage());
 		model.addAttribute("mediaAudio", word.getMedia().getMediaAudio());
 
-						//	System.out.println("Media id"+wordMedia.getMedia().getMediaAudio());
-							//SoundRecordingUtil soundRecordingUtil = new SoundRecordingUtil();
+						
 							
 							
+					 }
+					 else if(request.getSession().getAttribute("sentencesId")!=null)
+					 {
+						 Sentences sentence=sentencesServiceApi.findById((int)request.getSession().getAttribute("sentencesId"));
+						 model.addAttribute("mediaImage", sentence.getMedia().getMediaImage());
+						 model.addAttribute("mediaAudio", sentence.getMedia().getMediaAudio());
 					 }
 				}
 			

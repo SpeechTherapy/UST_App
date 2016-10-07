@@ -98,7 +98,7 @@ transition: opacity 400ms ease-in;
    <%@ include file="AdminHeader.jsp" %> 
    <div style="float:right; margin-right:5%; margin-top:-3.5%;">
   <a href="/ust/user/DbLesson"><i class=" fa fa-arrow-left fa-3x" >&nbsp;&nbsp;&nbsp;</i></a>
-  <a href="/ust/WordsAdminLesson"><i class=" fa fa-arrow-right fa-3x"  ></i></a>
+  <a href="/ust/SoundsAdminLesson"><i class=" fa fa-arrow-right fa-3x"  ></i></a>
   </div>
   
         <div id="page-wrapper"  style="background-color:#222222; width:70%;  margin-left:22.5%; margin-top:8%; " align="center"  >
@@ -109,21 +109,26 @@ transition: opacity 400ms ease-in;
 
 
 <div>
+                  <form method="post"  enctype="multipart/form-data" action="activityEdit">
+
 <a href="#openModal212" ><i class="fa fa-edit fa-2x" 
  style="color:#0066FF; background-color:transparent;" ></i></a></div>
 <div id="openModal212" class="modalDialog">
 
 	<div>
+	
 		<a href="#close" title="Close" class="close">X</a>
 		<h2 style="color:#fff;">Edit Activity</h2>
- 
+  <label >Lesson Name:</label>
+       <input type="text" name="lesson" placeholder="Lesson Name in Urdu" style="margin-top:-3%; margin-left:20%;" ><br><br> 
+   
   		
        <label style="margin-top:-3%; margin-left:-58%;">Edit Picture:</label>
-        <input type="file" name="image"  style="margin-top:-5%; margin-left:52%;"/><br>
+        <input type="file" name="image"  style="margin-top:-5%; margin-left:52%;" /><br>
     
    
          <label style="margin-top:-3%; margin-left:-58%;">Edit Video: </label>
-  <input type="file" name="user_Video" accept="mp3/*"  style="margin-top:-5%; margin-left:52%;"/><br> 
+  <input type="file" name="video" accept="mp3/*"  style="margin-top:-5%; margin-left:52%;"/><br> 
  <button class="btn btn-default">Save</button>
       
 </div>
@@ -131,16 +136,18 @@ transition: opacity 400ms ease-in;
 </div>
 
 
- <div class="box-body" >
- <div class="img" style="margin-left:5%; margin-top:3%;">
-  <img style="width:100%; height:70%;" src="" name="imgbox" id="imgbox">
+ </div>
+ <div>
+          <iframe width="560" height="315" src="/ust/${videoRefrence}" frameborder="0" border="white" ></iframe>
+          </div>
+		      
+		              <div class="img">
+  <img style="width:20%; height:20%; background:white;" src="/ust/${lessonPic}" name="imgbox" id="imgbox">
 </div>
 
   
 
-         
-
-
+     
 
 
 
@@ -150,20 +157,21 @@ transition: opacity 400ms ease-in;
                   
  
                
+    
 
+</form>
             </div>
+            
             </div>
-            </div>
+            
             <!-- /.row -->
 
-        </div>
     
    
     
                              <%@ include file="AdminFooter.jsp" %> 
 
     <!-- /#wrapper -->
-       <script type="text/javascript" src="/ust/resources/js/Controller/SoundsAdminLesson.js"></script>
 
    
 </body>

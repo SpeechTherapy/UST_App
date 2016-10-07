@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ust.entity.Lesson;
 import com.ust.entity.Patient;
+import com.ust.entity.Sentences;
 import com.ust.entity.Sounds;
 import com.ust.entity.Therapist;
 import com.ust.entity.User;
@@ -98,6 +99,23 @@ public class PatientAssignmentController {
 		return result;
 
 	}
+	
+	@RequestMapping(value = "SentencesID", method = RequestMethod.POST)
+	public @ResponseBody Map<String, Object> SentencesID(@RequestBody Map<String, Object> map,
+			HttpServletRequest request) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		Map<String, Object> header = new HashMap<String, Object>();
+
+		if (map.containsKey("SentencesID")) {
+			request.getSession().setAttribute("ID", map.get("SentencesID"));
+			System.out.println("Words Id :: "+request.getSession().getAttribute("SentencesID"));
+			
+
+		}
+
+		return result;
+
+	}
 
 		
 	
@@ -147,6 +165,62 @@ public class PatientAssignmentController {
 			model.addAttribute("wordsList",lessons.getWords());
 			model.addAttribute("wordsId",word.getWordsId());
 			model.addAttribute("wordIsActive", word.getWordIsActive());
+			}
+		}
+			 }
+				}
+			 }else{
+				 System.out.println("Testing");
+			 }
+		   return modelAndView;
+	
+	
+	}
+	
+	@RequestMapping(value="PatientSentence")
+	public ModelAndView PatientSentence(Model model,HttpServletRequest request)
+	{
+		ModelAndView modelAndView=new ModelAndView("PatientSentence");
+
+		   int userId = (int) request.getSession().getAttribute("userId");
+			int patientId = (int) request.getSession().getAttribute("loginId");
+			Patient patient = patientServiceApi.findById(patientId);
+			if (request.getSession().getAttribute("userId") != null) {
+				if (patient != null) {
+					
+					
+						System.out.println("Patient Name ::" + patient.getCreatedDate());
+						model.addAttribute("patientName", patient.getPatientName());
+						model.addAttribute("createdOn", patient.getCreatedDate());
+						model.addAttribute("email", patient.getUser().getEmail());
+						model.addAttribute("contactNo", patient.getContactNum());
+						model.addAttribute("userPic", patient.getUser().getUserPic());
+						model.addAttribute("guradianName", patient.getPatientGuardianName());
+						
+						model.addAttribute("therapistName", patient.getTherapist().getTherapistName());
+						model.addAttribute("CreatedOn", patient.getTherapist().getCreatedDate());
+						model.addAttribute("Email", patient.getTherapist().getUser().getEmail());
+						model.addAttribute("Hospital", patient.getTherapist().getHospital().getHospitalName());
+						model.addAttribute("contactNo", patient.getTherapist().getTherapistContact());
+						model.addAttribute("UserPic", patient.getTherapist().getUser().getUserPic());
+
+					
+					
+					System.out.println("Patient"+patient.getPatientId());
+					System.out.println("Patient Name ::"+patient.getPatientName());
+		            
+
+	            
+		   System.out.println(" Word Lesson ID::"+request.getSession().getAttribute("AssignedLessonId"));
+			 if(request.getSession().getAttribute("AssignedLessonId")!=null)
+			 {
+		Lesson	lessons = lessonServiceApi.findById((int) request.getSession().getAttribute("AssignedLessonId"));
+		for(Sentences sentence:lessons.getSentences())
+		{
+			if(sentence.getSentencesIsActive()>0){
+				System.out.println("Sentence Name  ::" +sentence.getSentences());
+				model.addAttribute("sentencesList",lessons.getSentences());
+				model.addAttribute("sentencesId",sentence.getSentencesId());
 			}
 		}
 			 }

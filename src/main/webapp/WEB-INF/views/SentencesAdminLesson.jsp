@@ -154,7 +154,7 @@ transition: opacity 400ms ease-in;
 								</td>
 							</c:when>
 							<c:otherwise>
-								<td><button class="label label-success"  style="width:40%;  font-size:15px;"
+								<td><button class="btn btn-success"  style="width:40%;  font-size:15px;"
 								 onclick="DeactivateSentences('<c:out  value="${item.sentencesId}"/>',1)">Enable</button>
 								</td>
 							</c:otherwise>

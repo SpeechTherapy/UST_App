@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ust.entity.Lesson;
 import com.ust.entity.Patient;
+import com.ust.entity.Sentences;
 import com.ust.entity.Sounds;
 import com.ust.entity.Therapist;
 import com.ust.entity.User;
@@ -161,5 +162,66 @@ public class TherapistLessonsController
 	 
 		return modelAndView; 
 }
+	
+	
+	@RequestMapping (value = "TherapistSentence")
+
+	 public ModelAndView TherapistSentence(HttpServletRequest request, Model model, RedirectAttributes redirectAttributes, @ModelAttribute User user)
+	 {
+	   ModelAndView modelAndView = new ModelAndView("TherapistSentence");
+	   int userId = (int) request.getSession().getAttribute("userId");
+		int therapistId = (int) request.getSession().getAttribute("loginId");
+		Therapist therapist = therapistServiceApi.findById(therapistId);
+		if (request.getSession().getAttribute("userId") != null) {
+			if (therapist != null) {
+				System.out.println("Therapist Name ::" + therapist.getTherapistName());
+				model.addAttribute("therapistName", therapist.getTherapistName());
+				model.addAttribute("CreatedOn", therapist.getCreatedDate());
+				model.addAttribute("Email", therapist.getUser().getEmail());
+				model.addAttribute("Hospital", therapist.getHospital().getHospitalName());
+				model.addAttribute("contactNo", therapist.getTherapistContact());
+				model.addAttribute("UserPic", therapist.getUser().getUserPic());
+
+           
+	   System.out.println(" Sentence Lesson ID::"+request.getSession().getAttribute("lessonId"));
+		 if(request.getSession().getAttribute("lessonId")!=null)
+		 {
+			 System.out.println("Lesson ID in Sentence :: "+request.getSession().getAttribute("lessonId"));
+			 
+	Lesson	lessons = lessonServiceApi.findById((int) request.getSession().getAttribute("lessonId"));
+	for(Sentences sentence:lessons.getSentences())
+	{
+		if(sentence.getSentencesIsActive()>0){
+		System.out.println("Sentence Name  ::" +sentence.getSentences());
+		model.addAttribute("sentencesList",lessons.getSentences());
+		model.addAttribute("sentencesId",sentence.getSentencesId());
+		}
+	}
+		 }
+			}
+		 }else{
+			 System.out.println("Testing");
+		 }
+	   return modelAndView;
+	  
+	 } 
+	
+	@RequestMapping(value = "SetSentencesId", method = RequestMethod.POST)
+	public @ResponseBody Map<String, Object> SetSentencesId(@RequestBody Map<String, Object> map,
+			HttpServletRequest request) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		Map<String, Object> header = new HashMap<String, Object>();
+
+		if (map.containsKey("sentencesId")) {
+			System.out.println("sentencesId Checkinggggg:: " + map.get("sentencesId"));
+			request.getSession().setAttribute("sentencesId", map.get("sentencesId"));
+
+		}
+
+		return result;
+
+	}
+	
+	
 }
 	

@@ -112,11 +112,9 @@ color:#fff;
     
     <br> 
     	         <div style="float: left; margin-left: 10%; margin-top:2%;">
- <a href="/ust/PatientWord">
- <i class=" fa fa-arrow-left fa-3x">&nbsp;&nbsp;&nbsp;</i></a>
+
  <a href="/ust/user/WelcomePatient"><i class=" fa fa-home fa-3x">&nbsp;&nbsp;&nbsp;</i></a>
- <a href="/ust/ActivityScreenPatient"><i
-  class=" fa fa-arrow-right fa-3x"></i></a>
+
 </div>
 		   
 			

@@ -25,7 +25,7 @@
 font-size:24px;"><b>Sounds</b></button></a><br><br>
 <a href="../ust/TherapistWord"><button  class="btn btn-primary" style=" font-size:24px; margin-left:40%;
  width:20%; height:10%;"><b>Words</b></button></a><br><br>
-<button  class="btn btn-primary" style=" font-size:24px; margin-left:40%; width:20%; height:10%;"><b>Sentences</b></button><br><br>
+<a href="../ust/TherapistSentence" class="btn btn-primary" style=" font-size:24px; margin-left:40%; width:20%; height:10%;"><b>Sentences</b></a><br><br>
 
 
 <br>

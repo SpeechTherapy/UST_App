@@ -132,9 +132,7 @@ color:#fff;
 <i class="fa fa-check fa-5x" style="color:red; width:20%;"></i><br>
 </div>
 
-           <div style="float:right; margin-right:20%; margin-top:-4%;">
-<a onclick="sendAjax(1)"><i class="fa fa-microphone fa-5x" style="color:red width:20%;"></i></a>
-</div>
+     
 
 
 </div>

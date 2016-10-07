@@ -139,7 +139,7 @@ transition: opacity 400ms ease-in;
              > Sounds</a><br><br>
             <a class="btn btn-primary"  style="width:60%; margin-left:20%;" href="PatientWord"
              > Words</a><br><br>
-      <a class="btn btn-primary" style="width:60%; margin-left:20%;" > Sentences</a><br>
+      <a class="btn btn-primary" style="width:60%; margin-left:20%;" href="PatientSentence" > Sentences</a><br>
                
             
             <br><br>

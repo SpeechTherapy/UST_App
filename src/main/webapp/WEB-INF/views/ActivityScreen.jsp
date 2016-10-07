@@ -110,8 +110,7 @@ color:#fff;
    
     <br> 
   	         <div style="float: left; margin-left: 10%; margin-top:2%;">
- <a href="/ust/TherapistWord">
- <i class=" fa fa-arrow-left fa-3x">&nbsp;&nbsp;&nbsp;</i></a>
+
  <a href="/ust/user/WelcomeTherapist"><i class=" fa fa-home fa-3x">&nbsp;&nbsp;&nbsp;</i></a>
  
 </div>
@@ -125,10 +124,6 @@ color:#fff;
 <i class="fa fa-check fa-5x" style="color:red; width:20%;"></i><br>
 </div>
 
-
-
-<div style="float:right; margin-right:25%; margin-top:-15%;">
-<a onclick="sendAjax(1)"><i class="fa fa-microphone fa-5x" style="color:red width:20%;"></i></a>
 </div>
 <div style="float:right; margin-right:10%;margin-top:-10%;">
 <audio src="/ust/${mediaAudio }" controls="true" loop="true" autoplay="false" ></audio>
