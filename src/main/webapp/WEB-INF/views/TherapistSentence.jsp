@@ -40,10 +40,9 @@ transition: opacity 400ms ease-in;
               <c:forEach items="${sentencesList}" var="item">
               <c:if test="${item.sentencesIsActive==1}">
 
-<a href="/ust/ActivityScreen"><button   class="btn btn-primary" style=" margin-left:40%; width:20%; height:10%; 
-font-size:24px;" 
-onclick="sendAjax(<c:out  value="${item.sentencesId}"/>)">
-<b><c:out  value="${item.getSentences()}"/></b></button></a><br>
+<a onclick="sendAjax(<c:out  value="${item.sentencesId}"/>)" href="/ust/ActivityScreenSentence"  
+ class="btn btn-primary" style=" margin-left:40%; width:20%; height:10%; font-size:24px;" >
+<b><c:out  value="${item.getSentences()}"/></b></a><br>
 
 
 

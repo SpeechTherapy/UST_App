@@ -91,4 +91,50 @@ public class ActivityPatientController
        
     	 }
    
+	
+	@RequestMapping(value = "ActivitySentencePatient")
+
+	 public ModelAndView 	ActivitySentencePatient(HttpServletRequest request, Model model, RedirectAttributes redirectAttributes,@ModelAttribute User user)
+	 {
+	   
+	ModelAndView   modelAndView = new ModelAndView("ActivityScreenPatient");
+	    int userId=(int)request.getSession().getAttribute("userId");
+	    user=userServiceApi.findById(userId);
+		int patientId = (int) request.getSession().getAttribute("loginId");
+		Patient patient = patientServiceApi.findById(patientId);
+		if (request.getSession().getAttribute("userId") != null) {
+		
+				if (patient != null) {
+					System.out.println("Patient Name ::" + patient.getCreatedDate());
+					model.addAttribute("patientName", patient.getPatientName());
+					model.addAttribute("createdOn", patient.getCreatedDate());
+					model.addAttribute("email", patient.getUser().getEmail());
+					model.addAttribute("contactNo", patient.getContactNum());
+					model.addAttribute("userPic", patient.getUser().getUserPic());
+					model.addAttribute("guradianName", patient.getPatientGuardianName());
+					
+					model.addAttribute("therapistName", patient.getTherapist().getTherapistName());
+					model.addAttribute("CreatedOn", patient.getTherapist().getCreatedDate());
+					model.addAttribute("Email", patient.getTherapist().getUser().getEmail());
+					model.addAttribute("Hospital", patient.getTherapist().getHospital().getHospitalName());
+					model.addAttribute("contactNo", patient.getTherapist().getTherapistContact());
+					model.addAttribute("UserPic", patient.getTherapist().getUser().getUserPic());
+
+				}
+				 if(request.getSession().getAttribute("sentencesId")!=null)
+				 {
+					 Sentences sentence=sentencesServiceApi.findById((int)request.getSession().getAttribute("sentencesId"));
+					 model.addAttribute("mediaImage", sentence.getMedia().getMediaImage());
+					 model.addAttribute("mediaAudio", sentence.getMedia().getMediaAudio());
+				 }
+			}
+		
+
+			
+		return modelAndView;
+
+
+  
+	 }
+	
 }

@@ -91,13 +91,13 @@ model.addAttribute("mediaAudio", word.getMedia().getMediaAudio());
 					
 			 }
 			 
-			 else if(request.getSession().getAttribute("sentencesId")!=null)
+			 /*else if(request.getSession().getAttribute("sentencesId")!=null)
 			 {
 				 Sentences sentence=sentencesServiceApi.findById((int)request.getSession().getAttribute("sentencesId"));
 				 model.addAttribute("mediaImage", sentence.getMedia().getMediaImage());
 				 model.addAttribute("mediaAudio", sentence.getMedia().getMediaAudio());
 			 }
-				
+				*/
 			}
 			System.out.println("Check complete");
 
@@ -105,6 +105,44 @@ model.addAttribute("mediaAudio", word.getMedia().getMediaAudio());
 			return modelAndView;
     	 }
    
+	@RequestMapping(value = "ActivityScreenSentence")
+
+	 public ModelAndView ActivityScreenSentence(HttpServletRequest request, Model model, RedirectAttributes redirectAttributes,@ModelAttribute User user)
+	 {
+	   
+	ModelAndView   modelAndView = new ModelAndView("ActivityScreenSentence");
+	    int userId=(int)request.getSession().getAttribute("userId");
+	    user=userServiceApi.findById(userId);
+	    if (user.getTherapist() != null && user.getTherapist().size() > 0 && user.getUserIsActive()!=0)
+		{
+			System.out.println("In therapist");
+
+			for (Therapist therapist : user.getTherapist())
+			{
+				request.getSession().setAttribute("loginId", therapist.getTherapistId());
+				System.out.println("Therapist"+therapist.getTherapistId());
+				System.out.println("Therapist Name ::"+therapist.getTherapistName());
+				model.addAttribute("therapistName", therapist.getTherapistName());
+				model.addAttribute("CreatedOn", therapist.getCreatedDate());
+				model.addAttribute("Email", therapist.getUser().getEmail());
+				//model.addAttribute("Hospital", therapist.getHospital().getHospitalName());
+				model.addAttribute("contactNo", therapist.getTherapistContact());
+				model.addAttribute("UserPic", therapist.getUser().getUserPic());				}
+			
+			
+		 if(request.getSession().getAttribute("sentencesId")!=null)
+		 {
+			 Sentences sentence=sentencesServiceApi.findById((int)request.getSession().getAttribute("sentencesId"));
+			 model.addAttribute("mediaImage", sentence.getMedia().getMediaImage());
+			 model.addAttribute("mediaAudio", sentence.getMedia().getMediaAudio());
+		 }
+			
+		}
+		System.out.println("Check complete");
+
+			
+		return modelAndView;
+	 }
 	
 	
 	//Audio Recorder Function 

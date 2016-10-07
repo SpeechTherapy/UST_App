@@ -90,7 +90,7 @@
                         <a class="page-scroll" href="#6year">6 Year</a>
                 </li>
                     <li>
-                        <a class="page-scroll" href="/info/Articulation">Back</a>
+                        <a class="page-scroll" href="/ust/info/Articulation">Back</a>
                     </li>
                 </ul>
                 </nav>
