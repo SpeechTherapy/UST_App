@@ -59,7 +59,7 @@ public class TherapistReportController {
 List<Patient> patientList=patientServiceApi.findAll();
 				 for(Patient patient:patientList)
 		            {
-					 model.addAttribute("Pic", patient.getUser().getUserPic());
+					 System.out.println("USer Pic Patient"+ patient.getUser().getUserPic());
 					 model.addAttribute("patientList",therapist.getPatient());
          			model.addAttribute("patientName", patient.getPatientName());
          			model.addAttribute("patientAge",patient.getPatientAge());
@@ -173,7 +173,8 @@ List<Patient> patientList=patientServiceApi.findAll();
 	               model.addAttribute("contactNum",reportDomain.getContactNum());
 	               model.addAttribute("language",reportDomain.getLanguage());
 	               model.addAttribute("Allergies",reportDomain.getAllergies());
-	             
+					 model.addAttribute("Pic", patient.getUser().getUserPic());
+
 	               System.out.println("Patient Name" +patient.getPatientName());
 	             
 	             for(AssignedChapterTherapist assignedChapterTherapist : patient.getAssignedchapterTherapist())
