@@ -45,7 +45,7 @@
             <span>Blog</span>
                     </a>
  <li class="treeview">
-          <a href="AboutPatient">
+          <a href="AboutPatient" target="_blank">
             <i class="glyphicon glyphicon-exclamation-sign"></i>
             <span>About</span>
            </a>          

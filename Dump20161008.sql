@@ -69,7 +69,6 @@ CREATE TABLE `assigned_chapter_therapist` (
 
 LOCK TABLES `assigned_chapter_therapist` WRITE;
 /*!40000 ALTER TABLE `assigned_chapter_therapist` DISABLE KEYS */;
-INSERT INTO `assigned_chapter_therapist` VALUES (1,1,1,0),(2,1,2,0),(3,1,3,0);
 /*!40000 ALTER TABLE `assigned_chapter_therapist` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -202,7 +201,7 @@ CREATE TABLE `hospital` (
   PRIMARY KEY (`Hospital_id`),
   KEY `Cityy_id_idx` (`City_id`),
   CONSTRAINT `Cityy_id` FOREIGN KEY (`City_id`) REFERENCES `city` (`City_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -211,7 +210,7 @@ CREATE TABLE `hospital` (
 
 LOCK TABLES `hospital` WRITE;
 /*!40000 ALTER TABLE `hospital` DISABLE KEYS */;
-INSERT INTO `hospital` VALUES (1,259,'Abbasi Shaheed','P-38 / A, 10th Street, Khayaban-e-Rahat, Street # 10, Phase-VI,'),(2,263,'Abbasi Shaheed','P-38 / A, 10th Street, Khayaban-e-Rahat, Street # 10, Phase-VI,'),(3,261,'Abbasi Shaheed','P-38 / A, 10th Street, Khayaban-e-Rahat, Street # 10, Phase-VI,'),(4,246,'Agha Khan','Agha Khan Nazimabad'),(5,262,'Agha Khan','Agha Khan Nazimabad'),(6,261,'Liaquat National','Testing Address'),(7,257,'Liaquat National','Testing Address'),(8,258,'Agha Khan','Agha Khan Address'),(9,256,'Agha Khan','Agha Khan Address'),(10,259,'Agha Khan Hospital','Agha Khan Address'),(11,251,'Agha Khan Hospital','Agha Khan Address'),(12,251,'Agha Khan Hospital','Agha Khan Address'),(13,258,'Abbasi Shaheed','Abbasi Shaheed Address'),(14,258,'Abbasi Shaheed','Abbasi Shaheed Address'),(15,250,'Ziauddin Hospital','Ziauddin Address'),(16,261,'testing','Testing Address'),(17,261,'testing','Testing Address');
+INSERT INTO `hospital` VALUES (1,259,'Abbasi Shaheed','P-38 / A, 10th Street, Khayaban-e-Rahat, Street # 10, Phase-VI,'),(2,263,'Abbasi Shaheed','P-38 / A, 10th Street, Khayaban-e-Rahat, Street # 10, Phase-VI,'),(3,261,'Abbasi Shaheed','P-38 / A, 10th Street, Khayaban-e-Rahat, Street # 10, Phase-VI,'),(4,246,'Agha Khan','Agha Khan Nazimabad'),(5,262,'Agha Khan','Agha Khan Nazimabad'),(6,261,'Liaquat National','Testing Address'),(7,257,'Liaquat National','Testing Address'),(8,258,'Agha Khan','Agha Khan Address'),(9,256,'Agha Khan','Agha Khan Address'),(10,259,'Agha Khan Hospital','Agha Khan Address'),(11,251,'Agha Khan Hospital','Agha Khan Address'),(12,251,'Agha Khan Hospital','Agha Khan Address'),(13,258,'Abbasi Shaheed','Abbasi Shaheed Address'),(14,258,'Abbasi Shaheed','Abbasi Shaheed Address'),(15,250,'Ziauddin Hospital','Ziauddin Address'),(16,261,'testing','Testing Address'),(17,261,'testing','Testing Address'),(18,258,'Ziauddin Hospital','Ziauddin Address'),(19,259,'Ziauddin Hospital','Ziauddin Address');
 /*!40000 ALTER TABLE `hospital` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -237,7 +236,7 @@ CREATE TABLE `lesson` (
 
 LOCK TABLES `lesson` WRITE;
 /*!40000 ALTER TABLE `lesson` DISABLE KEYS */;
-INSERT INTO `lesson` VALUES (1,'ب','static-images/-baa.mp4','static-images/-Urdu-Letter.png'),(2,'پ','https://www.youtube.com/embed/LgK-hupUcEs','resources/uploads/hurf (3).png'),(3,'ت','https://www.youtube.com/embed/7XSycD_nNbA','resources/uploads/hurf (4).png'),(4,'ٹ','https://www.youtube.com/embed/R74MvCGWNVs','resources/uploads/hurf (5).png'),(5,'ث','https://www.youtube.com/embed/D8FRqwHCpwQ','resources/uploads/hurf (6).png'),(6,'ج','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(7,'چ','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(8,'ح','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(9,'خ','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(10,'د','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(11,'ڈ','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(12,'ذ','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(13,'ر','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(14,'ز','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(15,'ژ','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(16,'س','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(17,'ش','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(18,'ص','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(19,'ض','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(20,'ط','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(21,'ظ','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(22,'ف','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(23,'ک','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(24,'ل','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(25,'م','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(26,'ن','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(27,'و','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL);
+INSERT INTO `lesson` VALUES (1,'ب','static-images/-baa.mp4','static-images/-Urdu-Letter.png'),(2,'پ','static-images/-paa.mp4','static-images/-Untitled-3.png'),(3,'ت','https://www.youtube.com/embed/7XSycD_nNbA','resources/uploads/hurf (4).png'),(4,'ٹ','https://www.youtube.com/embed/R74MvCGWNVs','resources/uploads/hurf (5).png'),(5,'ث','https://www.youtube.com/embed/D8FRqwHCpwQ','resources/uploads/hurf (6).png'),(6,'ج','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(7,'چ','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(8,'ح','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(9,'خ','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(10,'د','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(11,'ڈ','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(12,'ذ','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(13,'ر','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(14,'ز','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(15,'ژ','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(16,'س','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(17,'ش','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(18,'ص','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(19,'ض','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(20,'ط','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(21,'ظ','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(22,'ف','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(23,'ک','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(24,'ل','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(25,'م','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(26,'ن','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL),(27,'و','https://www.youtube.com/watch?v=0oKreL1jvkg',NULL);
 /*!40000 ALTER TABLE `lesson` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -253,7 +252,7 @@ CREATE TABLE `media` (
   `Media_image` varchar(1000) DEFAULT NULL,
   `Media_audio` varchar(1000) NOT NULL,
   PRIMARY KEY (`Media_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -262,7 +261,7 @@ CREATE TABLE `media` (
 
 LOCK TABLES `media` WRITE;
 /*!40000 ALTER TABLE `media` DISABLE KEYS */;
-INSERT INTO `media` VALUES (39,NULL,'static-images/-boo.mp3'),(40,NULL,'static-images/bee.mp3'),(41,NULL,'static-images/Baaaaa.mp3'),(42,'static-images/1475262326822.jpg','static-images/baja.mp3'),(43,'static-images/PicsArt_09-30-01.24.24.jpg','static-images/bili.mp3'),(44,NULL,'static-images/paa.mp3'),(45,NULL,'static-images/pay.mp3'),(46,NULL,'static-images/Baaayy.mp3'),(47,'static-images/1475316416761.jpg','static-images/paisay.mp3'),(48,'static-images/1475316698068.jpg','static-images/pata.mp3'),(49,NULL,'static-images/پو.mp3'),(50,'static-images/-1475262863403.jpg','static-images/-pani.mp3'),(51,'static-images/PicsArt_10-07-07.10.36.jpg','static-images/bay.mp3');
+INSERT INTO `media` VALUES (39,NULL,'static-images/-boo.mp3'),(40,NULL,'static-images/bee.mp3'),(41,NULL,'static-images/Baaaaa.mp3'),(42,'static-images/1475262326822.jpg','static-images/baja.mp3'),(43,'static-images/PicsArt_09-30-01.24.24.jpg','static-images/bili.mp3'),(44,NULL,'static-images/paa.mp3'),(45,NULL,'static-images/pay.mp3'),(46,NULL,'static-images/Baaayy.mp3'),(47,'static-images/1475316416761.jpg','static-images/paisay.mp3'),(48,'static-images/1475316698068.jpg','static-images/pata.mp3'),(49,NULL,'static-images/پو.mp3'),(50,'static-images/-1475262863403.jpg','static-images/-pani.mp3'),(51,'static-images/PicsArt_10-07-07.10.36.jpg','static-images/bay.mp3'),(52,'static-images/PicsArt_10-07-07.36.55.jpg','static-images/Recording_11.mp3');
 /*!40000 ALTER TABLE `media` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -293,7 +292,7 @@ CREATE TABLE `patient` (
   KEY `User_idd_idx` (`User_id`),
   CONSTRAINT `Therapist_id` FOREIGN KEY (`Therapist_id`) REFERENCES `therapist` (`Therapist_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `User_idd` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -483,7 +482,7 @@ CREATE TABLE `sentences` (
   KEY `Sentences_MediaID_idx` (`Sentences_MediaID`),
   CONSTRAINT `Chapptter_id` FOREIGN KEY (`Lesson_id`) REFERENCES `lesson` (`Lesson_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `Sentences_MediaID` FOREIGN KEY (`Sentences_MediaID`) REFERENCES `media` (`Media_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -492,7 +491,7 @@ CREATE TABLE `sentences` (
 
 LOCK TABLES `sentences` WRITE;
 /*!40000 ALTER TABLE `sentences` DISABLE KEYS */;
-INSERT INTO `sentences` VALUES (1,1,'بلی نے باجا بجایا',1,51);
+INSERT INTO `sentences` VALUES (1,1,'بلی نے باجا بجایا',1,51),(2,2,'پپو نے پانی پیا',1,52);
 /*!40000 ALTER TABLE `sentences` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -548,7 +547,7 @@ CREATE TABLE `therapist` (
   KEY `Hospital_id_idx` (`Hospital_id`),
   CONSTRAINT `Hospital_id` FOREIGN KEY (`Hospital_id`) REFERENCES `hospital` (`Hospital_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `User_id` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -557,7 +556,7 @@ CREATE TABLE `therapist` (
 
 LOCK TABLES `therapist` WRITE;
 /*!40000 ALTER TABLE `therapist` DISABLE KEYS */;
-INSERT INTO `therapist` VALUES (6,69,12,'03359202074','2016-10-04 15:46:06','2016-01-04','male','Habib Khan Shahani'),(7,70,14,'03332289981','2016-10-04 16:03:11','2016-01-04','female','Dr.Bushra Bhatti'),(8,71,15,'7667676','2016-10-04 16:06:43','2016-01-04','male','Dr.Shahid Masood');
+INSERT INTO `therapist` VALUES (6,69,12,'03359202074','2016-10-04 15:46:06','2016-01-04','male','Habib Khan Shahani'),(7,70,14,'03332289981','2016-10-04 16:03:11','2016-01-04','female','Dr.Bushra Bhatti'),(8,71,19,'7667676','2016-10-08 04:29:33','2016-01-08','male','Dr.Shahid Masood');
 /*!40000 ALTER TABLE `therapist` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -580,7 +579,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`User_id`),
   UNIQUE KEY `Username_UNIQUE` (`Username`),
   UNIQUE KEY `Email_UNIQUE` (`Email`)
-) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -589,7 +588,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (57,'speechtherapy49@gmail.com','speech49','123','1',NULL,0,'1'),(69,'shah_aqua18@hotmail.com','HabibK','1234','1','static-images/_MG_0182lklklk.jpg',0,'1'),(70,'shanzakhan.sks@gmail.com','sshanza','123','1','static-images/profile2.jpg',0,'1'),(71,'shanzakhan70@yahoo.com','shahid','111','1','static-images/-chris_palmer_profile_11.jpg',0,'1'),(72,'abdulrehmank57s@gmail.com','abdulrehman','123','0','static-images/-IMG_9577.JPG',0,'1');
+INSERT INTO `user` VALUES (57,'speechtherapy49@gmail.com','speech49','123','1',NULL,0,'1'),(69,'shah_aqua18@hotmail.com','HabibK','1234','1','static-images/_MG_0182lklklk.jpg',0,'1'),(70,'shanzakhan.sks@gmail.com','sshanza','123','1','static-images/profile2.jpg',0,'1'),(71,'shanzakhan70@yahoo.com','shahid','111','1','static-images/dasdasa.png',0,'1'),(72,'abdulrehmank57s@gmail.com','abdulrehman','123','0','static-images/-IMG_9577.JPG',0,'1');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -633,4 +632,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-08  0:13:00
+-- Dump completed on 2016-10-08 10:26:10

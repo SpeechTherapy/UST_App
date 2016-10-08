@@ -199,7 +199,7 @@ public class TherapistController {
 	{
 		ModelAndView modelAndView=new ModelAndView("Profile");;
 		int userId = (int)request.getSession().getAttribute("userId");
-		int therapistId=(int) request.getSession().getAttribute("therapistId");
+		int therapistId=(int) request.getSession().getAttribute("userId");
 		if( request.getSession().getAttribute("loginId")!=null)
 		{
 			modelAndView = new ModelAndView("Profile");

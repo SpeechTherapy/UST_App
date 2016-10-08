@@ -17,7 +17,7 @@
                     <li><a href="/ust/PatientListAdmin"><i style="color:#CC0000" class="fa fa-heartbeat"></i> Patient List</a></li>
                                       <li><a href="/ust/AdminBlog"><i style="color:#6633CC" class="fa fa-feed"></i> Blog</a></li>
                     <!-- <li><a href="2016 Blogger Template Free Version/DiscussionPanel.html"><i style="color:#33FFCC" class="fa fa-comments-o"></i> Discussion Panel</a></li> -->
-                    <li><a href="/ust/AboutAdmin"><i style="color:#9933FF" class="fa  fa-info-circle"></i> About</a></li>
+                    <li><a href="/ust/AboutAdmin" target="_blank"><i style="color:#9933FF" class="fa  fa-info-circle"></i> About</a></li>
 
                     <li><a href="logout"><i style="color:#990033" class="glyphicon glyphicon-off"></i> Logout</a></li>       
                 </ul>

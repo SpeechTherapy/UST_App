@@ -27,19 +27,8 @@ public class TherapistArticulationController
 	 public ModelAndView Articulation(HttpServletRequest request, Model model, RedirectAttributes redirectAttributes, @ModelAttribute User user)
 	 {
 	      ModelAndView modelAndView = new ModelAndView("Articulation");
-	      int userId=(int)request.getSession().getAttribute("userId");
-		    user=userServiceApi.findById(userId);
-		    if (user.getTherapist() != null && user.getTherapist().size() > 0 && user.getUserIsActive()!=0)
-			{
-				System.out.println("In therapist");
-			}
-			
-	   else
-	   {
-	    redirectAttributes.addFlashAttribute("message", "Session has been expired please 'Login' Again");
-	    modelAndView = new ModelAndView("redirect:/user/LoginUser");
-	   }
-	   redirectAttributes.addFlashAttribute("message", "Login from Therapist's Username");
+	    
+		 
 	   return modelAndView;
 	  
 	 } 

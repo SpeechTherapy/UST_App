@@ -49,7 +49,7 @@
             <span>Blog</span>
             </span>          </a>
  <li class="treeview">
-          <a href="/ust/AboutTherapist">
+          <a href="/ust/AboutTherapist" target="_blank">
             <i class="glyphicon glyphicon-exclamation-sign"></i>
             <span>About</span>
             </span></a>          

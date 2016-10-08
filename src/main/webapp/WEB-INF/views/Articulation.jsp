@@ -69,7 +69,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/ust/user/WelcomeTherapist">Home </a>
+                        <a class="page-scroll" href="/ust/user/WelcomePatient">Home </a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#info">Info </a>

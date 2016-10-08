@@ -71,7 +71,7 @@ ModelAndView Profile(@ModelAttribute PatientDomain patientDomain,Model model, Ht
     		String imageLocation = null;
     		if (file!=null) {
     			try {
-    				imageLocation = "C:/Users/Sana/Desktop/ustdata/"  +"-"+file.getOriginalFilename().replace(" ", "-");
+    				imageLocation = "C:/Users/ShaNzaKhan.ShaNzaKhan-PC/Desktop/UST-Data/"  +"-"+file.getOriginalFilename().replace(" ", "-");
     				BufferedOutputStream stream = new BufferedOutputStream(
     						new FileOutputStream(new File(imageLocation)));
                     FileCopyUtils.copy(file.getInputStream(), stream);
@@ -185,7 +185,7 @@ ModelAndView PatientProfileEdit(@ModelAttribute PatientDomain patientDomain,Mode
 	        String imageLocation = null;
     		if (file!=null) {
     			try {
-    				imageLocation = "C:/Users/Sana/Desktop/ustdata/" +file.getOriginalFilename().replace(" ", "-");
+    				imageLocation = "C:/Users/ShaNzaKhan.ShaNzaKhan-PC/Desktop/UST-Data/" +file.getOriginalFilename().replace(" ", "-");
     				BufferedOutputStream stream = new BufferedOutputStream(
     						new FileOutputStream(new File(imageLocation)));
                     FileCopyUtils.copy(file.getInputStream(), stream);
